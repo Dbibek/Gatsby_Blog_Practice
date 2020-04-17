@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Head from '../components/head'
+import Form from './form'
 
 function Contact() {
   return (
@@ -17,6 +18,7 @@ function Contact() {
           click here
         </a>
       </p>
+      <Form/>
     </Layout>
   )
 }
