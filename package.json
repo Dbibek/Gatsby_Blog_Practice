@@ -8,11 +8,13 @@
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
+    "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.3",
     "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.5",
+    "gatsby-plugin-typescript": "^2.3.3",
     "gatsby-remark-images": "^3.2.3",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-contentful": "^2.2.8",
@@ -27,6 +29,9 @@
     "react-scripts": "^3.4.1"
   },
   "devDependencies": {
+    "@types/node": "^13.13.0",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
     "env-cmd": "^10.1.0",
     "prettier": "^1.19.1"
   },

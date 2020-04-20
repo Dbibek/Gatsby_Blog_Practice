@@ -1,4 +1,14 @@
 module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
+  ],
   siteMetadata: {
     title: `Gatsby Practice Bibek!`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -12,6 +22,12 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 
       }
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://gmail.us4.list-manage.com/subscribe/post?u=5f53e9e0425e25be4ef97729a&amp;id=f7a1734428" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate',
+      },
     },
     'gatsby-plugin-sass',
     `gatsby-plugin-react-helmet`,
