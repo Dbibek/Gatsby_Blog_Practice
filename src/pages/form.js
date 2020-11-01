@@ -2,17 +2,20 @@
 import React from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import  formStyles from '../pages/form.module.scss'
+import Greeting from '../components/greeting'
+
+
 
 export default class Form extends React.Component {
     state = {
-        name: null,
-        email: null,
+        email:'',
+        name:'',
+        isSubscribed:false
+        
     }
 
     _handleChange = (e) => {
-        console.log({
-            [`${e.target.name}`]: e.target.value,
-        });
+       
         this.setState({
             [`${e.target.name}`]: e.target.value,
         });
@@ -20,51 +23,51 @@ export default class Form extends React.Component {
 
     _handleSubmit = (e) => {
         e.preventDefault();
-
-        console.log('submit', this.state);
-
-        addToMailchimp(this.state.email)
-        .then(data=>console.log('dataa', data))
-        
-    //         .then(({ msg, result }) => {
-    //             console.log('msg', `${result}: ${msg}`);
-
-    //             if (result !== 'success') {
-    //                 throw msg;
-    //             }
-    //             alert(msg);
-    //         })
-    //         .catch((err) => {
-    //             console.log('err', err);
-    //             alert(err);
-    //         });
+    
+        addToMailchimp(this.state.email,{NAME:this.state.name})
+        .then(data=>{
+         this.setState({isSubscribed:true})
+          
+         
+        })
+        .catch((error) => {
+          // Errors in here are client side
+          // Mailchimp always returns a 200
+        });
      }
 
     render() {
-        return (
-            <div>
+            return (
                 <div>
-                    <form className={formStyles.EmailListForm} onSubmit={this._handleSubmit}>
+                    <div>
+                        {
+                            this.state.isSubscribed===true ? <Greeting name= {this.state.name}/> :
+                        
+                        <form className={formStyles.EmailListForm} onSubmit={this._handleSubmit}  >
                         <input
-                            type="text"
-                            onChange={this._handleChange}
-                            placeholder="Name"
-                            name="name"
-                        />
-                        <input
-                            type="email"
-                            onChange={this._handleChange}
-                            placeholder="email"
-                            name="email"
-                            required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+`?\.[a-z]{2,4}$'
-                            
-                        />
-                        <p id='error'>please enter valid email</p>
-                       
-                        <button>Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        );
+                                type="email"
+                                value={this.state.email}
+                                onChange={(event) => this._handleChange(event)}
+                                placeholder="email"
+                                name="email"
+                                required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+`?\.[a-z]{2,4}$'
+                                 />
+                            <input
+                                type="text"
+                                value={this.state.name}
+                                onChange={(event) => this._handleChange(event)}
+                                placeholder="Name"
+                                name="name"
+                            />
+                           
+                       <button > Subscribe</button> 
+                        </form>
     }
-}
+                    </div>
+                </div>
+            );
+        }
+        
+       
+       
+    }
