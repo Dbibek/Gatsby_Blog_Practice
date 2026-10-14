@@ -1,14 +1,4 @@
 module.exports = {
-  plugins: [
-    {
-      resolve: `gatsby-plugin-typescript`,
-      options: {
-        isTSX: true, // defaults to false
-        jsxPragma: `jsx`, // defaults to "React"
-        allExtensions: true, // defaults to false
-      },
-    },
-  ],
   siteMetadata: {
     title: `Gatsby Practice Bibek!`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -53,7 +43,7 @@ module.exports = {
           {
             resolve:'gatsby-remark-images',
             options:{
-              maxwidth: 750,
+              maxWidth: 750,
               linkImagesToOriginal: false
 
             }

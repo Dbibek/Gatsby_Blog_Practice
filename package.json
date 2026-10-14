@@ -4,37 +4,31 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^13.4.0",
-    "gatsby": "^5.2.0",
-    "gatsby-image": "^2.3.1",
-    "gatsby-plugin-mailchimp": "^5.1.2",
-    "gatsby-plugin-manifest": "^5.12.3",
-    "gatsby-plugin-offline": "^3.1.2",
-    "gatsby-plugin-react-helmet": "^3.2.3",
-    "gatsby-plugin-sass": "^2.2.1",
-    "gatsby-plugin-sharp": "^5.12.3",
-    "gatsby-plugin-typescript": "^2.3.3",
-    "gatsby-remark-images": "^3.2.3",
-    "gatsby-remark-relative-images": "^0.3.0",
-    "gatsby-source-contentful": "^8.12.4",
-    "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-transformer-remark": "^2.7.1",
-    "gatsby-transformer-sharp": "^5.12.3",
-    "node-sass": "^7.0.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-scripts": "^5.0.1",
-    "reactjs-popup": "^1.5.0"
+    "@contentful/rich-text-react-renderer": "^15.22.11",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-image": "^3.16.0",
+    "gatsby-plugin-mailchimp": "^5.2.2",
+    "gatsby-plugin-react-helmet": "^6.16.0",
+    "gatsby-plugin-sass": "^6.16.0",
+    "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-remark-images": "^7.16.0",
+    "gatsby-remark-relative-images": "^2.0.5",
+    "gatsby-source-contentful": "^8.17.0",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-transformer-remark": "^6.16.0",
+    "gatsby-transformer-sharp": "^5.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@types/node": "^13.13.0",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.6",
-    "env-cmd": "^10.1.0",
-    "prettier": "^1.19.1"
+    "env-cmd": "^11.0.0",
+    "prettier": "^3.9.10",
+    "sass": "^1.93.2"
   },
   "keywords": [
     "gatsby"
@@ -55,5 +49,14 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "allowScripts": {
+    "gatsby@5.16.1": true,
+    "gatsby-cli@5.16.0": true,
+    "sharp@0.32.6": true,
+    "lmdb@2.5.2": true,
+    "lmdb@2.5.3": true,
+    "@parcel/watcher@2.6.0": true,
+    "msgpackr-extract@3.0.4": true
   }
 }
